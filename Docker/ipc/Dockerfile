@@ -56,6 +56,7 @@ RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
     python3-setuptools \
     python3-numpy \
     python3-empy  \
+    python3-opencv \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -67,6 +68,7 @@ RUN curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sud
 
 RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -o Acquire::ForceIPv4=true install --no-install-recommends -y \
     ros-$ROS_DISTRO-desktop-full \
+    ros-$ROS_DISTRO-rosbridge-suite \
     python-rosdep \
     python-rosinstall \
     python-rosinstall-generator \
@@ -86,6 +88,8 @@ RUN pip3 install \
     cython \
     catkin-tools \
     matplotlib \
+    numpy \
+    Pillow \
     pandas \
     gdown \
     keras==2.2.4 \
