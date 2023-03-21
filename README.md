@@ -1,3 +1,56 @@
+This forked repo is a modified version of the original one integrated into ROS.
+
+## Clone the repo
+```
+$ git clone git@github.com:ARG-NCTU/FUnIE-GAN.git
+```
+
+## Setup docker
+The required dependencies are already installed, you only need a PC with GPU, and make sure the docker is installed.
+
+## How to run
+
+1. Docker Run
+
+	Run this script to pull the latest docker image to your workstation.
+
+	```
+	$ source pc_run.sh
+	```
+
+2. Docker Join
+	
+	If you want to enter the same docker image, run this script.
+
+	```
+	$ source pc_join.sh
+	```
+
+3. Catkin Make
+
+	Run the compile script if you clone the repo first time.
+	```
+	$ source catkin_make.sh
+	```
+
+4. Setup Environment
+
+	Make sure to execute this script every time you enter docker container.
+
+	```
+    $ source environment.sh
+    ```
+
+5. Run Image Enhancement
+
+	Run the image enhancement model with TensorFlow pre-trained weights.
+	
+	```
+	$ roslaunch funie-gan funie_gan.launch
+	```
+
+----------
+
 TensorFlow and PyTorch implementations of the paper *[Fast Underwater Image Enhancement for Improved Visual Perception (RA-L 2020)](https://ieeexplore.ieee.org/document/9001231)* and other GAN-based models.
 
 ![funie-fig](/data/funie.jpg)
